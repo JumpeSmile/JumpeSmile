@@ -1,4 +1,4 @@
-# PivotalTrackerBugTemplate
+# JumpeSmile
 
 #### This project aims to provide an ultimate and flexible image cropping experience. Made in [Yalantis](https://yalantis.com/?utm_source=github)
 
