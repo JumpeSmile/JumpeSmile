@@ -1,9 +1,9 @@
-# uCrop - Image Cropping Library for Android
+# upgraded
 
 #### This project aims to provide an ultimate and flexible image cropping experience. Made in [Yalantis](https://yalantis.com/?utm_source=github)
 
-#### [How We Created uCrop](https://yalantis.com/blog/how-we-created-ucrop-our-own-image-cropping-library-for-android/)
-#### Check this [project on Dribbble](https://dribbble.com/shots/2484752-uCrop-Image-Cropping-Library)
+#### [How We Created upgraded](https://yalantis.com/blog/how-we-created-upgraded-our-own-image-cropping-library-for-android/)
+#### Check this [project on Dribbble](https://dribbble.com/shots/2484752-upgraded-Image-Cropping-Library)
 
 <img src="preview.gif" width="800" height="600">
 
@@ -11,7 +11,7 @@
 
 *For a working implementation, please have a look at the Sample Project - sample*
 
-<a href="https://play.google.com/store/apps/details?id=com.yalantis.ucrop.sample&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-AC-global-none-all-co-pr-py-PartBadges-Oct1515-1"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" width="185" height="70"/></a>
+<a href="https://play.google.com/store/apps/details?id=com.yalantis.upgraded.sample&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-AC-global-none-all-co-pr-py-PartBadges-Oct1515-1"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" width="185" height="70"/></a>
 
 1. Include the library as a local library project.
 
@@ -24,36 +24,36 @@
 	}
 	```
 
-    ``` implementation 'com.github.yalantis:ucrop:2.2.9' ``` - lightweight general solution
+    ``` implementation 'com.github.yalantis:upgraded:2.2.9' ``` - lightweight general solution
 
-    ``` implementation 'com.github.yalantis:ucrop:2.2.9-native' ``` - get power of the native code to preserve image quality (+ about 1.5 MB to an apk size)
+    ``` implementation 'com.github.yalantis:upgraded:2.2.9-native' ``` - get power of the native code to preserve image quality (+ about 1.5 MB to an apk size)
 
-2. Add UCropActivity into your AndroidManifest.xml
+2. Add upgradedActivity into your AndroidManifest.xml
 
     ```
     <activity
-        android:name="com.yalantis.ucrop.UCropActivity"
+        android:name="com.yalantis.upgraded.upgradedActivity"
         android:screenOrientation="portrait"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     ```
 
-3. Register a callback for the uCrop result.
+3. Register a callback for the upgraded result.
 
     ```java
     private ActivityResultLauncher<Intent> activityResultLauncher =
             registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), result -> {
                 if (result.getResultCode() == RESULT_OK) {
-                    final Uri resultUri = UCrop.getOutput(result.getData());
-                } else if (result.getResultCode() == UCrop.RESULT_ERROR) {
-                    final Throwable cropError = UCrop.getError(result.getData());
+                    final Uri resultUri = upgraded.getOutput(result.getData());
+                } else if (result.getResultCode() == upgraded.RESULT_ERROR) {
+                    final Throwable cropError = upgraded.getError(result.getData());
                 }
             });
     ```
 
-4. Create the uCrop configuration using the builder pattern.
+4. Create the upgraded configuration using the builder pattern.
 
    ```java
-   UCrop.of(sourceUri, destinationUri)
+   upgraded.of(sourceUri, destinationUri)
        .withAspectRatio(16, 9)
        .withMaxResultSize(maxWidth, maxHeight)
        .start(context, activityResultLauncher);
@@ -62,16 +62,16 @@
 5. You may want to add this to your PROGUARD config:
 
     ```
-    -dontwarn com.yalantis.ucrop**
-    -keep class com.yalantis.ucrop** { *; }
-    -keep interface com.yalantis.ucrop** { *; }
+    -dontwarn com.yalantis.upgraded**
+    -keep class com.yalantis.upgraded** { *; }
+    -keep interface com.yalantis.upgraded** { *; }
     ```
 
 # Customization
 
 If you want to let your users choose crop ratio dynamically, just do not call `withAspectRatio(x, y)`.
 
-uCrop builder class has method `withOptions(UCrop.Options options)` which extends library configurations.
+upgraded builder class has method `withOptions(upgraded.Options options)` which extends library configurations.
 
 Currently, you can change:
 
@@ -96,8 +96,8 @@ Currently, you can change:
 ### Version: 2.2.9
 
 *   Update compileSdk and targetSdk versions up to 33
-*   Fixed [#867](https://github.com/Yalantis/uCrop/issues/867)
-*   Fixed [#873](https://github.com/Yalantis/uCrop/issues/873)
+*   Fixed [#867](https://github.com/Yalantis/upgraded/issues/867)
+*   Fixed [#873](https://github.com/Yalantis/upgraded/issues/873)
 *   And other improvements
 
 ### Version: 2.2.8
@@ -105,16 +105,16 @@ Currently, you can change:
 *   Merged pending pull requests with improvements and bugfixes
 *   Update compileSdk and targetSdk versions up to 31
 *   Add localizations
-*   Fixed [#609](https://github.com/Yalantis/uCrop/issues/609)
-*   Fixed [#794](https://github.com/Yalantis/uCrop/issues/794)
+*   Fixed [#609](https://github.com/Yalantis/upgraded/issues/609)
+*   Fixed [#794](https://github.com/Yalantis/upgraded/issues/794)
 
 
 ### Version: 2.2.5
 
-*   Fixed [#584](https://github.com/Yalantis/uCrop/issues/584)
-*   Fixed [#598](https://github.com/Yalantis/uCrop/issues/598)
-*   Fixed [#543](https://github.com/Yalantis/uCrop/issues/543)
-*   Fixed [#602](https://github.com/Yalantis/uCrop/issues/602)
+*   Fixed [#584](https://github.com/Yalantis/upgraded/issues/584)
+*   Fixed [#598](https://github.com/Yalantis/upgraded/issues/598)
+*   Fixed [#543](https://github.com/Yalantis/upgraded/issues/543)
+*   Fixed [#602](https://github.com/Yalantis/upgraded/issues/602)
 *   And other improvements
 
 
@@ -122,35 +122,35 @@ Currently, you can change:
 
   * **AndroidX migration**
   * Redesign
-  * Several fixes including [#550](https://github.com/Yalantis/uCrop/issues/550)
+  * Several fixes including [#550](https://github.com/Yalantis/upgraded/issues/550)
 
 ### Version: 2.2.3
 
-  * Several fixes including [#445](https://github.com/Yalantis/uCrop/issues/445), [#465](https://github.com/Yalantis/uCrop/issues/465) and more!
+  * Several fixes including [#445](https://github.com/Yalantis/upgraded/issues/445), [#465](https://github.com/Yalantis/upgraded/issues/465) and more!
   * Material design support
-  * uCrop fragment as child fragment
+  * upgraded fragment as child fragment
   * Added the Italian language
 
 ### Version: 2.2.2
 
-* uCrop fragment added
+* upgraded fragment added
 * bugfix
 
 ### Version: 2.2.1
 
-  * Fix including [#285](https://github.com/Yalantis/uCrop/issues/285)
+  * Fix including [#285](https://github.com/Yalantis/upgraded/issues/285)
 
 ### Version: 2.2
 
-  * Several fixes including [#121](https://github.com/Yalantis/uCrop/issues/121), [#173](https://github.com/Yalantis/uCrop/issues/173), [#184](https://github.com/Yalantis/uCrop/issues/184) and more!
-  * New APIs introduced [#149](https://github.com/Yalantis/uCrop/issues/149), [#186](https://github.com/Yalantis/uCrop/issues/186) and [#156](https://github.com/Yalantis/uCrop/issues/156)
+  * Several fixes including [#121](https://github.com/Yalantis/upgraded/issues/121), [#173](https://github.com/Yalantis/upgraded/issues/173), [#184](https://github.com/Yalantis/upgraded/issues/184) and more!
+  * New APIs introduced [#149](https://github.com/Yalantis/upgraded/issues/149), [#186](https://github.com/Yalantis/upgraded/issues/186) and [#156](https://github.com/Yalantis/upgraded/issues/156)
 
 ### Version: 2.1
 
-  * Fixes issue with EXIF data (images taken on front camera with Samsung devices mostly) [#130](https://github.com/Yalantis/uCrop/issues/130) [#111](https://github.com/Yalantis/uCrop/issues/111)
-  * Added API to set custom set of aspect ratio options for the user. [#131](https://github.com/Yalantis/uCrop/issues/131)
-  * Added API to set all configs via UCrop.Options class. [#126](https://github.com/Yalantis/uCrop/issues/126)
-  * Added ABI x86_64 support. [#105](https://github.com/Yalantis/uCrop/issues/105)
+  * Fixes issue with EXIF data (images taken on front camera with Samsung devices mostly) [#130](https://github.com/Yalantis/upgraded/issues/130) [#111](https://github.com/Yalantis/upgraded/issues/111)
+  * Added API to set custom set of aspect ratio options for the user. [#131](https://github.com/Yalantis/upgraded/issues/131)
+  * Added API to set all configs via upgraded.Options class. [#126](https://github.com/Yalantis/upgraded/issues/126)
+  * Added ABI x86_64 support. [#105](https://github.com/Yalantis/upgraded/issues/105)
 
 ### Version: 2.0
 
@@ -160,8 +160,8 @@ Currently, you can change:
 
 ### Version: 1.5
 
-  * Introduced "Freestyle" crop (you can resize crop rectangle by dragging it corners) [#32](https://github.com/Yalantis/uCrop/issues/32)
-  * Now image & crop view paddings are not associated [#68](https://github.com/Yalantis/uCrop/issues/68)
+  * Introduced "Freestyle" crop (you can resize crop rectangle by dragging it corners) [#32](https://github.com/Yalantis/upgraded/issues/32)
+  * Now image & crop view paddings are not associated [#68](https://github.com/Yalantis/upgraded/issues/68)
   * Updated API
 
 ### Version: 1.4
@@ -188,7 +188,7 @@ Currently, you can change:
 
 ### Version: 1.1
 
-  * UCrop builder was updated and now UCrop.Options class has even more values to setup.
+  * upgraded builder was updated and now upgraded.Options class has even more values to setup.
 
 ### Version: 1.0
 
@@ -198,7 +198,7 @@ Currently, you can change:
 
 We’d be really happy if you sent us links to your projects where you use our component. Just send an email to github@yalantis.com And do let us know if you have any questions or suggestion regarding the library.
 
-#### Apps using uCrop
+#### Apps using upgraded
 
 - [Thirty](https://play.google.com/store/apps/details?id=com.twominds.thirty).
 - [Light Smart HD](https://play.google.com/store/apps/details?id=com.SmartCamera.simple).
